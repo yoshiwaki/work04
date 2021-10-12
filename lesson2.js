@@ -34,22 +34,28 @@ const showTasks = () => {
     comment.innerText = task.task;
     createStatusButton(task, status);
     createRemoveButton(remove);
-
-    remove.addEventListener('click',() =>{
-      while(taskId>0)taskTable.deleteRow(0);
-      tasks.shift(taskId)
-      showTasks(tasks)
-    })
-  });
+        
+      
+    
+    remove.addEventListener('click',()=>{
+      taskTable.deleteRow(taskId);
+      tasks.filter(taskId)
+        showTasks();
+      })
+  })
+  
 }
-
 
 taskTrigger.addEventListener('click', () => {
   const task = { task: taskValue.value, status: '作業中' }
   tasks.push(task);
   showTasks();
   taskValue.value = '';
-});
+
+  
+  
+  
+})
 
 
 
