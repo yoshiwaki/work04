@@ -14,6 +14,18 @@ const createRemoveButton = remove => {
     const removeButton = document.createElement('button');
     removeButton.innerText = '削除';
     remove.appendChild(removeButton);
+    remove.addEventListener('click',()=>{
+      // const taskId = taskTable.rows.length;
+      // console.log(taskId)
+      // const id = taskId.innerText
+      // console.log(id)
+      taskTable.deleteRow(Object.keys(tasks))
+    
+      
+      tasks.splice(Object.keys(tasks));
+      
+        showTasks();
+      })
 }
 
 
@@ -34,14 +46,7 @@ const showTasks = () => {
     comment.innerText = task.task;
     createStatusButton(task, status);
     createRemoveButton(remove);
-        
-      
     
-    remove.addEventListener('click',()=>{
-      taskTable.deleteRow(taskId);
-      tasks.filter(taskId)
-        showTasks();
-      })
   })
   
 }
